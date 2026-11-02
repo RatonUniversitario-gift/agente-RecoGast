@@ -1,0 +1,162 @@
+[
+  {
+    "id": "PL001",
+    "nombre": "Risotto de Setas Silvestres",
+    "categoria": "Platos de Fondo",
+    "descripcion": "Arroz carnaroli cremoso con variedad de setas de temporada, aceite de trufa blanca y queso parmesano reggiano madurado 24 meses.",
+    "precio": 14500,
+    "alergenos": [
+      "Lácteos"
+    ],
+    "es_vegetariano": true,
+    "es_celiaco": false,
+    "maridaje_sugerido": "Vino Pinot Noir reserva o Chardonnay con barrica.",
+    "perfil_termico": "calido"
+  },
+  {
+    "id": "PL002",
+    "nombre": "Salmón Austral a la Plancha",
+    "categoria": "Platos de Fondo",
+    "descripcion": "Filete de salmón sellado al punto con costra de sésamo, acompañado de puré rústico de habas al eneldo y emulsión de cítricos.",
+    "precio": 16900,
+    "alergenos": [
+      "Pescado",
+      "Sésamo"
+    ],
+    "es_vegetariano": false,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Sauvignon Blanc del Valle de Leyda.",
+    "perfil_termico": "neutro"
+  },
+  {
+    "id": "PL003",
+    "nombre": "Ceviche Vegano de Cochayuyo y Champiñones",
+    "categoria": "Entradas",
+    "descripcion": "Ceviche fresco con cubos de cochayuyo tierno, champiñones parís, cebolla morada en pluma, cilantro, choclo peruano y leche de tigre vegetal de ají amarillo.",
+    "precio": 9800,
+    "alergenos": [],
+    "es_vegetariano": true,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Cerveza artesanal Blonde Ale o Pisco Sour tradicional.",
+    "perfil_termico": "fresco"
+  },
+  {
+    "id": "PL004",
+    "nombre": "Filete de Vacuno en Reducción de Carmenere",
+    "categoria": "Platos de Fondo",
+    "descripcion": "Corte de filete (250g) a la parrilla sobre pastelera de choclo aromatizada con albahaca y salsa de vino Carmenere con notas de frutos negros.",
+    "precio": 18500,
+    "alergenos": [
+      "Lácteos"
+    ],
+    "es_vegetariano": false,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Carmenere Gran Reserva del Valle de Colchagua.",
+    "perfil_termico": "calido"
+  },
+  {
+    "id": "PL005",
+    "nombre": "Tártaro de Atún Rojo y Palta",
+    "categoria": "Entradas",
+    "descripcion": "Cubos de atún fresco marinados en soya cítrica, aceite de sésamo y jengibre, servidos sobre abanico de palta hass y crocantes de arroz inflado.",
+    "precio": 11500,
+    "alergenos": [
+      "Pescado",
+      "Soya",
+      "Sésamo"
+    ],
+    "es_vegetariano": false,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Espumante Brut Nature o Sauvignon Blanc.",
+    "perfil_termico": "fresco"
+  },
+  {
+    "id": "PL006",
+    "nombre": "Locos en Salsa Verde con Mayonesa Casera",
+    "categoria": "Entradas",
+    "descripcion": "Laminado fino de locos chilenos tiernos y cocidos a baja temperatura, acompañados de salsa verde fresca de cebolla y cilantro, y mayonesa al ajo suave.",
+    "precio": 13900,
+    "alergenos": [
+      "Moluscos",
+      "Huevo"
+    ],
+    "es_vegetariano": false,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Chardonnay mineral del Valle de Limarí.",
+    "perfil_termico": "fresco"
+  },
+  {
+    "id": "PL007",
+    "nombre": "Garrón de Cordero Magallánico Glaseado",
+    "categoria": "Platos de Fondo",
+    "descripcion": "Garrón braseado lentamente durante 8 horas en su propio jugo con romero y ajo negro, servido sobre polenta cremosa con queso de cabra.",
+    "precio": 19800,
+    "alergenos": [
+      "Lácteos"
+    ],
+    "es_vegetariano": false,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Cabernet Sauvignon o Syrah de cuerpo entero.",
+    "perfil_termico": "calido"
+  },
+  {
+    "id": "PL008",
+    "nombre": "Curry Verde de Tofu y Vegetales Asados",
+    "categoria": "Platos de Fondo",
+    "descripcion": "Cubos de tofu crocante, calabacín, berenjena y pimientos salteados en salsa de leche de coco, pasta de curry verde y albahaca thai, servido con arroz basmati aromático.",
+    "precio": 12900,
+    "alergenos": [
+      "Soya"
+    ],
+    "es_vegetariano": true,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Gewürztraminer o Cerveza IPA frutal.",
+    "perfil_termico": "calido"
+  },
+  {
+    "id": "PL009",
+    "nombre": "Sorrentinos de Calabaza Asada y Nuez",
+    "categoria": "Platos de Fondo",
+    "descripcion": "Pasta fresca rellena de puré de zapallo camote ahumado, nueces tostadas y queso brie, bañados en mantequilla de salvia y avellanas europeas picadas.",
+    "precio": 13800,
+    "alergenos": [
+      "Gluten",
+      "Lácteos",
+      "Huevo",
+      "Frutos Secos"
+    ],
+    "es_vegetariano": true,
+    "es_celiaco": false,
+    "maridaje_sugerido": "Viognier o Vino blanco con crianza.",
+    "perfil_termico": "calido"
+  },
+  {
+    "id": "PL010",
+    "nombre": "Volcán de Chocolate Amargo con Helado de Frutos Rojos",
+    "categoria": "Postres",
+    "descripcion": "Bizcocho tibio de chocolate amargo (70% cacao) con corazón líquido, acompañado de helado artesanal de frambuesa y crujiente de almendras.",
+    "precio": 6500,
+    "alergenos": [
+      "Gluten",
+      "Lácteos",
+      "Huevo",
+      "Frutos Secos"
+    ],
+    "es_vegetariano": true,
+    "es_celiaco": false,
+    "maridaje_sugerido": "Oporto Tawny o Café espresso de origen.",
+    "perfil_termico": "calido"
+  },
+  {
+    "id": "PL011",
+    "nombre": "Pannacotta Vegana de Leche de Coco y Maracuyá",
+    "categoria": "Postres",
+    "descripcion": "Postre frío a base de crema y leche de coco infusionada con vainilla natural, gelificado con agar-agar y bañado en coulis fresco de maracuyá ácido.",
+    "precio": 5900,
+    "alergenos": [],
+    "es_vegetariano": true,
+    "es_celiaco": true,
+    "maridaje_sugerido": "Late Harvest o Té verde jazmín.",
+    "perfil_termico": "fresco"
+  }
+]

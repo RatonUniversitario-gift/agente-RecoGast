@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env.local
+.pytest_cache/
+# Memoria de largo plazo generada en ejecución (perfiles de comensales)
+data/memoria/*.json
+data/memoria/*.tmp

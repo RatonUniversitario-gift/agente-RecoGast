@@ -1,0 +1,68 @@
+
+==============================================================================
+Escenario 1 - Seguridad: el sistema bloquea un pedido no apto (celíaco)
+==============================================================================
+  > planificar_comida({})
+  {'error': 'Primero confirma alergias y dietas con el comensal y regístralas con registrar_restricciones (si no tiene, envía listas vacías).'}
+  > registrar_restricciones({"dietas": ["celíaco"]})
+  > registrar_pedido({"platos": ["Sorrentinos de Calabaza", "Ceviche Vegano"]})
+  -> {'registrado': False, 'rechazos': [{'plato': 'Sorrentinos de Calabaza Asada y Nuez', 'motivos': ['no es apto para celíacos']}]}
+
+==============================================================================
+Escenario 2 - Presupuesto cambiante: replanificación por prioridades
+==============================================================================
+  > registrar_restricciones({"alergias": []})
+  > planificar_comida({})
+  -> etapas incluidas: ['entrada', 'fondo', 'postre'] | entrada: Ceviche Vegano de Cochayuyo y Champiñones | fondo: Curry Verde de Tofu y Vegetales Asados | postre: Pannacotta Vegana de Leche de Coco y Maracuyá  -> total $28,600
+  > planificar_comida({"presupuesto": 20000})
+  -> etapas incluidas: ['fondo', 'postre'] | fondo: Curry Verde de Tofu y Vegetales Asados | postre: Pannacotta Vegana de Leche de Coco y Maracuyá  -> total $18,800
+  > planificar_comida({"presupuesto": 5000})
+  -> etapas incluidas: [] | (sin propuesta)
+  !! No hay plato de fondo apto dentro de las restricciones y el presupuesto indicados.
+
+==============================================================================
+Escenario 3 - Clima cambiante: la propuesta se ajusta a mitad de conversación
+==============================================================================
+  > registrar_restricciones({"alergias": []})
+  > consultar_clima({})
+  > planificar_comida({})
+  -> entrada: Ceviche Vegano de Cochayuyo y Champiñones | fondo: Salmón Austral a la Plancha | postre: Pannacotta Vegana de Leche de Coco y Maracuyá  -> total $32,600
+  > consultar_clima({"forzar": true})
+  -> [{'plato': 'propuesta anterior', 'razon': 'se ajustó a las nuevas condiciones'}] 
+  -> entrada: Ceviche Vegano de Cochayuyo y Champiñones | fondo: Curry Verde de Tofu y Vegetales Asados | postre: Volcán de Chocolate Amargo con Helado de Frutos Rojos  -> total $29,200
+
+==============================================================================
+Escenario 4 - Alergia declarada a mitad de conversación
+==============================================================================
+  > registrar_restricciones({"alergias": []})
+  > consultar_clima({})
+  > planificar_comida({})
+  -> entrada: Ceviche Vegano de Cochayuyo y Champiñones | fondo: Salmón Austral a la Plancha | postre: Pannacotta Vegana de Leche de Coco y Maracuyá  -> total $32,600
+  > registrar_restricciones({"alergias": ["pescado"]})
+  -> [{'plato': 'Salmón Austral a la Plancha', 'razon': 'contiene Pescado'}] 
+  -> entrada: Ceviche Vegano de Cochayuyo y Champiñones | fondo: Curry Verde de Tofu y Vegetales Asados | postre: Pannacotta Vegana de Leche de Coco y Maracuyá  -> total $28,600
+
+Comensal: demo
+Alergias registradas: Pescado
+Dietas registradas: ninguna
+Restricciones confirmadas por el comensal en esta sesión: SÍ
+Presupuesto: no indicado
+Clima: calor | preferencia térmica efectiva: fresco
+Plan (orden de servicio): entrada[P2] -> fondo[P1] -> postre[P3]
+Propuesta vigente: entrada: Ceviche Vegano de Cochayuyo y Champiñones; fondo: Curry Verde de Tofu y Vegetales Asados; postre: Pannacotta Vegana de Leche de Coco y Maracuyá
+Pedido registrado: no
+
+Bitácora de eventos:
+  - CLIMA [calor, 30.0°C]
+  - PLAN [entrada, fondo, postre] total $32.600
+  - REPLAN [restricciones/presupuesto actualizados] -> Salmón Austral a la Plancha (contiene Pescado)
+
+==============================================================================
+Escenario 5 - Memoria de largo plazo: segunda visita
+==============================================================================
+  > registrar_restricciones({"alergias": ["nueces"], "dietas": ["vegetariano"], "preferencia_termica": "fresco"})
+  > guardar_nota({"texto": "Celebra su cumpleaños y le encantó el ceviche vegano", "tipo": "ocasion"})
+  > registrar_pedido({"platos": ["PL003", "PL008", "PL011"], "mesa": "2"})
+  Estado inicial 2.ª visita: ['Frutos Secos'] ['vegetariano'] | confirmadas: False
+  > recuperar_memoria({"consulta": "cumpleaños"})
+  -> {'perfil': {'alergenos': ['Frutos Secos'], 'dietas': ['vegetariano'], 'preferencia_termica': 'fresco', 'visitas': 2}, 'notas_relevantes': [{'texto': 'Celebra su cumpleaños y le encantó el ceviche vegano', 'tipo': 'ocasion', 'fecha': '2026-10-31T03:01:40', 'distancia': 42.119}, {'texto': 'Pidió: Ceviche Vegano de Cochayuyo y Champiñones, Curry Verde de Tofu y Vegetales Asados, Pannacotta Vegana de Leche de Coco y Maracuyá', 'tipo': 'pedido', 'fecha': '2026-10-31T03:01:40', 'distancia': 45.412}], 'pedidos_anteriores': [{'fecha': '2026-10-31T03:01:40', 'platos': ['Ceviche Vegano de Cochayuyo y Champiñones', 'Curry Verde de Tofu y Vegetales Asados', 'Pannacotta Vegana de Leche de Coco y Maracuyá'], 'total': 28600}]}
