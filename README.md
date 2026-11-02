@@ -48,7 +48,7 @@ Crea un archivo `.env` en la raíz:
 
 ```
 GOOGLE_API_KEY=tu_clave
-GOOGLE_MODEL=gemini-3.6-flash
+GOOGLE_MODEL=gemini-3.5-flash-lite 
 (opcional) HF_TOKEN=tu_clave
 ```
 

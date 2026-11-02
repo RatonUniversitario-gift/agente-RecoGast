@@ -81,6 +81,7 @@ def main():
                 print("Cuota de Gemini agotada para este modelo. Cambia GOOGLE_MODEL en .env o espera al reinicio diario.\n")
             else:
                 print(f"Error procesando la solicitud: {err}\n")
+        entrada = None
 
 
 if __name__ == "__main__":
