@@ -28,16 +28,16 @@ Diagramas completos (arquitectura, secuencia, estados, memoria): **[`docs/orques
 
 ## Requisitos
 
-- Python 3.12+
+- Python 3.11+
 - API key de Google AI Studio (https://aistudio.google.com/apikey)
-- API key de HF con permisos de solo lectura (https://huggingface.co/settings/tokens)
+- (opcional) API key de HF con permisos de solo lectura (https://huggingface.co/settings/tokens)
 - Internet (Gemini, Open-Meteo y la primera descarga del modelo de embeddings)
 
 ## Instalación
 
 ```bash
-git clone <url-del-repositorio>
-cd chatbot-restaurant
+git clone (https://github.com/RatonUniversitario-gift/agente-RecoGast)
+cd agente-RecoGast
 
 python -m venv venv
 # Windows: venv\Scripts\activate      Mac/Linux: source venv/bin/activate
@@ -49,7 +49,7 @@ Crea un archivo `.env` en la raíz:
 ```
 GOOGLE_API_KEY=tu_clave
 GOOGLE_MODEL=gemini-3.6-flash
-HF_TOKEN=tu_clave
+(opcional) HF_TOKEN=tu_clave
 ```
 
 ## Ejecución
