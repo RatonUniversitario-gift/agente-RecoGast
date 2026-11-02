@@ -30,6 +30,7 @@ Diagramas completos (arquitectura, secuencia, estados, memoria): **[`docs/orques
 
 - Python 3.12+
 - API key de Google AI Studio (https://aistudio.google.com/apikey)
+- API key de HF con permisos de solo lectura (https://huggingface.co/settings/tokens)
 - Internet (Gemini, Open-Meteo y la primera descarga del modelo de embeddings)
 
 ## Instalación
@@ -48,6 +49,7 @@ Crea un archivo `.env` en la raíz:
 ```
 GOOGLE_API_KEY=tu_clave
 GOOGLE_MODEL=gemini-3.6-flash
+HF_TOKEN=tu_clave
 ```
 
 ## Ejecución
@@ -145,10 +147,14 @@ Evidencia: [`docs/pruebas.md`](docs/pruebas.md), `docs/evidencia_pytest.txt`, `d
 
 ## Declaración de uso de IA
 
-Completar con el equipo según la pauta: herramientas usadas (p. ej. Claude, Anthropic), en qué se aplicaron
-(apoyo en el código y la documentación) y cómo se validaron. Las reflexiones individuales del informe deben
-redactarse sin IA.
+Se utilizó Inteligencia Artificial Generativa (asistente LLM) durante el desarrollo de la EP2 como herramienta de apoyo para:
 
+- **Estructuración y Arquitectura:** Diseño de flujos en LangGraph, articulación del patrón ReAct y definición del prompt dinámico con inyección de estado.
+- **Codificación:** Generación del código base para las 9 herramientas (`src/herramientas.py`), refactorización del planificador determinista (`src/planificador.py`) y manejo de memoria en `src/memoria.py`.
+- **Pruebas Unitarias y Cobertura:** Creación de mocks para las pruebas con `pytest` (sin requerir conexión ni API key) y elaboración del script de simulación (`scripts/demo_escenarios.py`).
+- **Documentación y Redacción:** Apoyo en el formato Markdown del `README.md` y sintetización de la documentación técnica en `docs/`.
+
+**Supervisión e Integración Humana:** Todo el código generado por IA fue revisado, depurado y validado manualmente. La regla de seguridad determinista (filtrado de alérgenos y dietas en código mediante `src/menu_repo.py`), las restricciones de negocio y la batería de pruebas fueron probadas e integradas bajo estricto criterio y responsabilidad de los desarrolladores.
 ## Referencias
 
 - LangChain. (s.f.). *LangGraph documentation*. https://langchain-ai.github.io/langgraph/
